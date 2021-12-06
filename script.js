@@ -2,10 +2,7 @@ let detail;
 let amount;
 
 // holds all transactions
-let transactions = [
-  { type: "Income", detail: "Salary", amount: 3000 },
-  { type: "Expense", detail: "Rent", amount: 30 },
-];
+let transactions = [];
 
 // get values from inputs
 function getInputValues() {
@@ -24,44 +21,60 @@ function isValid() {
 
 // populate the table
 function displayTable() {
-    const tableBody = document.getElementById("tableBody");
+  const tableBody = document.getElementById("tableBody");
 
-    tableBody.innerHTML = "";
+  tableBody.innerHTML = "";
 
-    for (let i = 0; i < transactions.length; i++) {
-        
-        tableBody.innerHTML +=  `
+  for (let i = 0; i < transactions.length; i++) {
+    tableBody.innerHTML += `
         <tr>
                 <th>${transactions[i].type}</th>
                 <th>${transactions[i].detail}</th>
                 <th>${transactions[i].amount}</th>
             </tr>
         `;
-        
+  }
+}
+
+
+function getResults () {
+    const incomeTotal = document.getElementById("incomeTotal");
+    const expenseTotal = document.getElementById("expenseTotal");
+    const amountTotal = document.getElementById("amountTotal");
+
+    let income = 0;
+    let expense = 0;
+    let amount = 0;
+
+   for (let i = 0; i < transactions.length; i++) {
+
+    if (transactions[i].type === "Income") {
+        income += transactions[i].amount;
     }
+
+    if (transactions[i].type === "Expense") {
+        expense += transactions[i].amount;
+    }
+       
+   }
+
+   incomeTotal.innerHTML = income;
+   expenseTotal.innerHTML = expense;
+   amountTotal.innerHTML = income - expense;
 }
 
 
-
-function calcIncome() {
+function calc(type) {
   getInputValues();
 
-  if (!isValid()) {
-    return;
-  }
+  if (!isValid()) return;
 
+  transactions.push({ type, detail, amount })
+  getResults();
   displayTable();
-
-  console.log(detail, amount);
 }
 
 
-function calcExpense() {
-  getInputValues();
 
-  if (!isValid()) {
-    return;
-  }
 
-  console.log(detail, amount);
-}
+
