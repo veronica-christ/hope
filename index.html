@@ -5,9 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello there</h1>
-    <h2>Authentication done</h2>
+    
+    <div class="app">
+
+        <h1>Expense tracker</h1>
+
+        <input type="text" id="detail" placeholder="Detail">
+        <input type="number" id="amount" placeholder="Amount">
+
+       <div>
+        <button class="income">
+           + INCOME
+        </button>
+        <button class="expense">
+           - EXPENCE
+        </button>
+       </div>
+
+
+       <table>
+           <tr>
+               <th>*</th>
+               <th>Detail</th>
+               <th>Amount</th>
+           </tr>
+           <tr>
+            <th>Income</th>
+            <th>Salary</th>
+            <th>3000</th>
+        </tr>
+        <tr>
+            <th>Expense</th>
+            <th>Transport</th>
+            <th>1000</th>
+        </tr>
+       </table>
+
+
+       <div class="total">
+        <h2>Total Income: <span class="incomeTotal">R6000<span></h2>
+            <h2>Total Expense: <span class="expenseTotal">R6000<span></h2>
+            <h2>Total Amount: <span class="amountTotal">R6000<span></h2>
+       </div>
+     
+    </div>
+
+
+    <script src="./script.js"></script>
 </body>
 </html>
