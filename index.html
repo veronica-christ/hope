@@ -17,31 +17,26 @@
         <input type="number" id="amount" placeholder="Amount">
 
        <div>
-        <button class="income">
+        <button class="income" onclick="calcIncome()">
            + INCOME
         </button>
-        <button class="expense">
+        <button class="expense" onclick="calcExpense()">
            - EXPENCE
         </button>
        </div>
 
 
        <table>
-           <tr>
-               <th>*</th>
-               <th>Detail</th>
-               <th>Amount</th>
-           </tr>
-           <tr>
-            <th>Income</th>
-            <th>Salary</th>
-            <th>3000</th>
-        </tr>
-        <tr>
-            <th>Expense</th>
-            <th>Transport</th>
-            <th>1000</th>
-        </tr>
+           <thead>
+            <tr>
+                <th>*</th>
+                <th>Detail</th>
+                <th>Amount</th>
+            </tr>
+           </thead>
+           <tbody id="tableBody">
+          
+           </tbody>
        </table>
 
 
